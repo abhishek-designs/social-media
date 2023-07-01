@@ -1,0 +1,39 @@
+POST http://localhost:8000/api/customer/signup
+Content-Type: application/json
+
+{
+    "username": "Abhishek",
+    "email": "akalyane980@gmail.com",
+    "password": "Abhi@123",
+    "confirmPwd": "Abhi@123",
+    "isMember": false
+}
+
+###
+
+POST http://localhost:8000/api/customer/signin
+Content-Type: application/json
+
+{
+    "email": "tonyst23@gmail.com",
+    "password": "Tony@123"
+}
+
+###
+
+GET http://localhost:8000/api/customer/info
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJUb255IiwiZW1haWwiOiJ0b255c3QyM0BnbWFpbC5jb20iLCJpc01lbWJlciI6ZmFsc2UsInBhc3N3b3JkIjoiJDJiJDEwJGhIWEdQWWM1MWhRekthNVlwSWRBbE9YRi52eWwxMHJ3ZnFnMGJoQ2EzS1NOT05zWDQuTlJ5IiwiY3JlYXRlZEF0IjoiMjAyMy0wNi0yOVQwNjo1NTozOC4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMy0wNi0yOVQwNjo1NTozOC4wMDBaIiwiaWF0IjoxNjg4MDIxNzQ1fQ.Iim1K089REwsJh6gET796Rcj1B0TOkzjMK4nu2kt6Fc 
+
+###
+POST http://localhost:8000/api/customer/add-friend
+Content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJBYmhpc2hlayIsImVtYWlsIjoiYWthbHlhbmU5ODBAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkcDNCTFNCYlJaUGlmaEk0V2V5ZGg3dVBjVzZKMHp2alVmczRDOVJWaXJTb2lYQkZFZno0anEiLCJpc01lbWJlciI6ZmFsc2UsInVwZGF0ZWRBdCI6IjIwMjMtMDYtMjlUMDY6NTk6MjguNDkzWiIsImNyZWF0ZWRBdCI6IjIwMjMtMDYtMjlUMDY6NTk6MjguNDkzWiIsImlhdCI6MTY4ODAyMTk2OH0.VtzG2qXRo2jf0OenBCI3asVDnQH5eQXlr8vxYV-CLBA 
+
+{
+    "friendId": 2
+}
+###
+
+GET http://localhost:8000/api/customer/list-friends?status=Pending
+Content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJBYmhpc2hlayIsImVtYWlsIjoiYWthbHlhbmU5ODBAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkcDNCTFNCYlJaUGlmaEk0V2V5ZGg3dVBjVzZKMHp2alVmczRDOVJWaXJTb2lYQkZFZno0anEiLCJpc01lbWJlciI6ZmFsc2UsInVwZGF0ZWRBdCI6IjIwMjMtMDYtMjlUMDY6NTk6MjguNDkzWiIsImNyZWF0ZWRBdCI6IjIwMjMtMDYtMjlUMDY6NTk6MjguNDkzWiIsImlhdCI6MTY4ODAyMTk2OH0.VtzG2qXRo2jf0OenBCI3asVDnQH5eQXlr8vxYV-CLBA 
