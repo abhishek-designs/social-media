@@ -154,6 +154,11 @@ class CustomerController {
             model: User,
             attributes: ["username"],
           },
+          {
+            model: User,
+            as: "friend",
+            attributes: ["username"],
+          },
         ],
       });
 
