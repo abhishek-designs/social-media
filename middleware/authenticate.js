@@ -13,7 +13,7 @@ const authenticate = (req, res, next) => {
 
     // Verify token
     const user = verifyToken(token.split(" ")[1]);
-
+    console.log(user);
     if (!user) {
       return res.status(400).json({
         msg: "Token is invalid",

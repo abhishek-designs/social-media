@@ -1,6 +1,7 @@
 "use strict";
 
 /** @type {import('sequelize-cli').Migration} */
+const { users } = require("../mock");
 module.exports = {
   async up(queryInterface, Sequelize) {
     /**
@@ -12,36 +13,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
      */
-    await queryInterface.bulkInsert(
-      "users",
-      [
-        {
-          username: "john doe",
-          email: "jdoe@gmail.com",
-          isMember: false,
-          password: "sdfdsfsdfsdfdsf-123123safsad-sad",
-        },
-        {
-          username: "tony stark",
-          email: "tony@gmail.com",
-          isMember: true,
-          password: "sdfdsfsdfsdfdsf-123123safsad-sad",
-        },
-        {
-          username: "sam williams",
-          email: "sam@gmail.com",
-          isMember: false,
-          password: "sdfdsfsdfsdfdsf-123123safsad-sad",
-        },
-        {
-          username: "richard stone",
-          email: "richard@gmail.com",
-          isMember: true,
-          password: "sdfdsfsdfsdfdsf-123123safsad-sad",
-        },
-      ],
-      {}
-    );
+    await queryInterface.bulkInsert("users", users, {});
   },
 
   async down(queryInterface, Sequelize) {
