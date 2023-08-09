@@ -25,6 +25,9 @@ module.exports = {
         type: Sequelize.ENUM("Male", "Female"),
         allowNull: false,
       },
+      profile_pic: {
+        type: Sequelize.STRING,
+      },
       password: {
         type: Sequelize.STRING,
         allowNull: false,

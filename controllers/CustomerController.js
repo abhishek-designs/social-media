@@ -179,6 +179,41 @@ class CustomerController {
       });
     }
   }
+
+  static async fetchCustomers(req, res) {
+    try {
+      const { rows, count } = await User.findAndCountAll({
+        attributes: ["id", "username", "email"],
+      });
+      res.status(200).json({
+        msg: "User list",
+        data: rows,
+        count,
+      });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({
+        msg: "Internal Server Error",
+      });
+    }
+  }
+
+  // Update the user profile
+  static async updateUser(req, res) {
+    try {
+      const userId = req.userId;
+      console.log(userId, "user profile id");
+      console.log(req.body, "user body");
+      res.status(200).json({
+        msg: "Updated user list",
+      });
+    } catch (error) {
+      console.error(err);
+      res.status(500).json({
+        msg: "Internal Server Error",
+      });
+    }
+  }
 }
 
 module.exports = CustomerController;
